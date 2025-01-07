@@ -1,0 +1,36 @@
+/*
+   Set the root font size and box-sizing behavior to create a consistent base for the entire document.
+*/
+
+html {
+    font-size: 100%;               /* 100% of the browser's default font size (usually 16px) */
+    box-sizing: border-box;        /* Ensures padding and border are included in the element's total width/height */
+}
+
+/*
+   Apply box-sizing inheritance to all elements and pseudo-elements.
+   This prevents unexpected sizing issues across different elements.
+*/
+
+*, *::before, *::after {
+    box-sizing: inherit;           /* Inherit box-sizing from the html element */
+}
+
+/*
+   Reset margin and padding for the body to eliminate default browser styles.
+   Use a custom font family with the variable set in the CSS root.
+*/
+
+body {
+    margin: 0;                     /* Remove default body margin */
+    padding: 0;                    /* Remove default body padding */
+    font-family: var(--font-inter); /* Use custom font set via CSS variable */
+}
+
+/*
+   Explanation:
+   1. Setting `font-size: 100%` on the `<html>` ensures predictable scaling based on the user's browser settings.
+   2. `box-sizing: border-box` simplifies width and height calculations by including padding and border in the element's total size.
+   3. Inheriting `box-sizing` for all elements ensures consistency throughout the layout.
+   4. Using CSS variables for the font-family allows easy updates across the project.
+*/

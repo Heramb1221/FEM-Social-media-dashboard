@@ -1,0 +1,68 @@
+/* Instead of using media queries directly throughout the codebase like:
+   @media (min-width: 50em) { ... }
+   we can use **breakpoints** and **mixins** to make the code reusable,
+   easier to maintain, and more consistent.
+
+   Mixins are reusable code blocks that can be included multiple times wherever needed.
+*/
+
+/* Define breakpoints for "up" media queries (min-width values) */
+$breakpoints-up: (
+    'medium': '40em',  // Medium screens: 640px and above
+    'large': '64em',   // Large screens: 1024px and above
+    'xlarge': '87.5em' // Extra large screens: 1400px and above
+);
+
+/* Define breakpoints for "down" media queries (max-width values) */
+$breakpoints-down: (
+    'small': '39.9375em',   // Small screens: Up to 639px
+    'medium': '63.9375em',  // Medium screens: Up to 1023px
+    'large': '87.4375em'    // Large screens: Up to 1399px
+);
+
+/*
+   Define a mixin for "up" media queries using the breakpoints-up map.
+   This mixin will apply styles when the screen width is greater than or equal to the specified size.
+*/
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content; // This allows the mixin to accept a block of code to execute.
+    }
+}
+
+/*
+   Define a mixin for "down" media queries using the breakpoints-down map.
+   This mixin will apply styles when the screen width is less than or equal to the specified size.
+*/
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+/*
+   To use the mixin, we use the @include directive with the desired breakpoint size.
+
+   Example usage:
+   -----------------
+   If we want to apply a larger font size for <h1> elements on large screens:
+*/
+/*
+h1 {
+    @include breakpoint(large) {
+        font-size: 3rem; // Increase font size for screens >= 1024px
+    }
+}
+*/
+/*
+   Benefits of using mixins:
+   -------------------------
+   1. **Code reusability**: Instead of writing repetitive media queries, we use mixins with predefined breakpoints.
+   2. **Maintainability**: If we ever need to update the breakpoint values, we only need to change them in one place.
+   3. **Readability**: Using @include makes the code cleaner and easier to understand.
+
+   Additional Notes:
+   -----------------
+   - The **@content** directive in the mixin allows the block of CSS code passed by @include to be inserted at that location.
+   - The use of **em** units ensures that the breakpoints are scalable and relative to the root font size.
+*/

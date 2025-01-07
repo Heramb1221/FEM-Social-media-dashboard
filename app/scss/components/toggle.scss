@@ -1,0 +1,23 @@
+@use '../util' as *;
+
+/*
+   Define styles for the `.toggle` component.
+   Use a nested selector for the toggle button to maintain a clear hierarchy.
+*/
+
+.toggle {
+    &__button {                      /* BEM naming convention: child element of `.toggle` */
+        width: rem(16);              /* Width set using custom rem function for scalability */
+        height: rem(16);             /* Height set using custom rem function for consistency */
+        border-radius: 50%;          /* Makes the button perfectly circular */
+        background-color: var(--toggle); /* Background color set using a CSS variable */
+    }
+}
+
+/*
+   Explanation:
+   1. Using `&__button` ensures a clear relationship between the parent `.toggle` and its child element, following the BEM (Block Element Modifier) methodology.
+   2. The `rem` function converts fixed pixel values to rem units, ensuring responsiveness and accessibility.
+   3. `border-radius: 50%` creates a circular button.
+   4. `background-color` is set using the `--toggle` variable, which makes it easy to switch themes or update the color globally.
+*/

@@ -1,0 +1,20 @@
+/*
+   Use `@forward` to re-export styles from other files/modules.
+   This helps in organizing the project by splitting it into smaller, reusable parts.
+   Any file importing this file will have access to all forwarded modules.
+*/
+
+@forward 'breakpoints';  // Forward breakpoints for responsive design
+@forward 'functions';    // Forward utility functions (e.g., rem conversion)
+
+/*
+   Explanation:
+   1. `@forward` is part of the Sass module system. It allows re-exporting styles from other Sass files.
+   2. This approach promotes modularity by grouping related styles into separate files.
+   3. Files importing this module don't need to import each individual file separately—they inherit all forwarded content.
+
+   Example usage:
+   In a main file (e.g., `main.scss`), you can simply do:
+   @use 'settings';
+   All variables, functions, and mixins forwarded by 'settings' will be accessible.
+*/

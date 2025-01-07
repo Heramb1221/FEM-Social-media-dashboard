@@ -1,0 +1,48 @@
+/*
+   Define color variables for primary, social media, and theme-specific colors.
+   Using CSS variables makes it easy to switch between dark and light themes.
+*/
+
+:root {
+    /* Primary Colors */
+    --limegreen: hsl(163, 72%, 41%);      /* Used for positive UI feedback */
+    --brightred: hsl(356, 69%, 56%);       /* Used for negative UI feedback */
+
+    /* Social Media Colors */
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram-start: hsl(37, 92%, 70%);  /* Instagram gradient start */
+    --instagram-end: hsl(329, 70%, 58%);   /* Instagram gradient end */
+    --youtube: hsl(348, 97%, 39%);
+
+    /* Toggle Button Colors */
+    --toggle-bg-start: hsl(210, 78%, 56%); /* Dark theme toggle gradient start */
+    --toggle-bg-end: hsl(146, 68%, 55%);   /* Dark theme toggle gradient end */
+    --toggle: hsl(230, 22%, 74%);          /* Light theme toggle color */
+
+    /* Dark Theme Colors */
+    --dark-bg: hsl(230, 17%, 14%);         /* Background color for dark theme */
+    --dark-top-bg: hsl(232, 19%, 15%);     /* Top section background */
+    --dark-card: hsl(228, 28%, 20%);       /* Card background */
+    --dark-text1: hsl(228, 34%, 66%);      /* Secondary text color */
+    --dark-text2: hsl(0, 0%, 100%);        /* Primary text color (white) */
+
+    /* Light Theme Colors */
+    --light-bg: hsl(0, 0%, 100%);          /* Background color for light theme */
+    --light-top-bg: hsl(225, 100%, 98%);   /* Top section background */
+    --light-card: hsl(227, 47%, 96%);      /* Card background */
+    --light-text: hsl(228, 12%, 44%);      /* Secondary text color */
+    --light-text2: hsl(230, 17%, 14%);     /* Primary text color (dark blue) */
+}
+
+/*
+   Notes:
+   1. Using HSL (Hue, Saturation, Lightness) makes it easier to tweak colors consistently.
+   2. Instagram and dark theme toggle buttons use gradients, defined by start and end colors.
+   3. The dark and light themes are defined with separate background, card, and text colors.
+   4. These variables can be easily applied using the `var()` function in CSS.
+
+   Example Usage:
+   background: var(--dark-bg);
+   color: var(--light-text);
+*/
