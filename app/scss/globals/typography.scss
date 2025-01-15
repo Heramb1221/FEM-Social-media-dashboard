@@ -1,10 +1,21 @@
+@use '../util' as *;
+
 /*
-   Remove default top margin for headings to maintain consistent spacing 
+   Remove default top margin for headings to maintain consistent spacing
    and prevent unnecessary extra space at the top of sections.
 */
 
 h1, h2, h3 {
     margin-top: 0; /* Eliminates default top margin applied by browsers */
+    line-height: 1.1;
+}
+
+h1 {
+   font-size: rem(24);
+   margin-bottom: rem(3);
+   @include breakpoint(large) {
+      font-size: rem(28);
+   }
 }
 
 /*

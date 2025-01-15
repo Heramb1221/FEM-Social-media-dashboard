@@ -25,6 +25,8 @@ body {
     margin: 0;                     /* Remove default body margin */
     padding: 0;                    /* Remove default body padding */
     font-family: var(--font-inter); /* Use custom font set via CSS variable */
+    background: var(--dark-bg);
+    color: var(--dark-text2)
 }
 
 /*

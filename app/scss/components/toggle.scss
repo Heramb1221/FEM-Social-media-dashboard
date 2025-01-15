@@ -6,13 +6,59 @@
 */
 
 .toggle {
-    &__button {                      /* BEM naming convention: child element of `.toggle` */
-        width: rem(16);              /* Width set using custom rem function for scalability */
-        height: rem(16);             /* Height set using custom rem function for consistency */
-        border-radius: 50%;          /* Makes the button perfectly circular */
-        background-color: var(--toggle); /* Background color set using a CSS variable */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: rem(12);
+    border: none;
+
+    label {
+        &[for='dark'] {
+            grid-column: 1 / 2;
+            justify-self: end;
+        }
+        &[for='system'] {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            justify-self: center;
+        }
+        &[for='light'] {
+            grid-column: 3 / 4;
+        }
     }
-}
+
+    &__wrapper {
+        position: relative;
+        grid-column: 2/ 3;
+        grid-row: 1 / 2;
+        height: rem(24);
+    }
+
+    input[type="radio"]{
+        opacity: 0;
+    }
+
+    &__background {
+        border-radius: rem(12);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        display: block;
+        background: linear-gradient(225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.82%);
+    }
+
+    &__button {                      /* BEM naming convention: child element of `.toggle` */
+        position: absolute;
+        left: rem(3);
+        top: rem(3);
+        right: 100%;
+        width: rem(18);              /* Width set using custom rem function for scalability */
+        height: rem(18);             /* Height set using custom rem function for consistency */
+        border-radius: 50%;          /* Makes the button perfectly circular */
+        background-color: var(--dark-bg); /* Background color set using a CSS variable */
+    }
+
 
 /*
    Explanation:
@@ -21,3 +67,4 @@
    3. `border-radius: 50%` creates a circular button.
    4. `background-color` is set using the `--toggle` variable, which makes it easy to switch themes or update the color globally.
 */
+}

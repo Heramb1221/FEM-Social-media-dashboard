@@ -9,14 +9,14 @@
 /* Define breakpoints for "up" media queries (min-width values) */
 $breakpoints-up: (
     'medium': '40em',  // Medium screens: 640px and above
-    'large': '64em',   // Large screens: 1024px and above
+    'large': '71.875em',   // Large screens: 1150px and above
     'xlarge': '87.5em' // Extra large screens: 1400px and above
 );
 
 /* Define breakpoints for "down" media queries (max-width values) */
 $breakpoints-down: (
     'small': '39.9375em',   // Small screens: Up to 639px
-    'medium': '63.9375em',  // Medium screens: Up to 1023px
+    'medium': '71.8125em',  // Medium screens: Up to 1149px
     'large': '87.4375em'    // Large screens: Up to 1399px
 );
 
