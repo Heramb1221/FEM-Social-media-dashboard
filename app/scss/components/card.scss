@@ -72,21 +72,6 @@
 
    &__icon{
       margin-right: rem(8);
-      &--facebook {
-
-      }
-
-      &--twitter {
-
-      }
-
-      &--instagram {
-
-      }
-
-      &--youtube {
-
-      }
    }
 
    &__username {
@@ -143,18 +128,4 @@
          margin-right: rem(4);
       }
    }
-
-   &__number {
-      
-   }
 }
-
-/*
-   Explanation:
-   1. The `rem` function likely converts pixel values to rems by dividing the given pixel value by the root font size.
-   2. Using rem units ensures that spacing scales appropriately if the root font size changes.
-   3. This approach enhances accessibility and responsiveness, especially for users who adjust their browser's default font size.
-
-   Example:
-   If the root font size is 16px, `rem(20)` returns `1.25rem` (20px / 16px).
-*/

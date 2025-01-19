@@ -11,15 +11,3 @@
        and multiply by 1rem to return the equivalent rem value */
        @return math.div($pixels, $context) * 1rem;
 }
-
-/* Example usage:
-h1 {
-   font-size: rem(30);  // Returns 2rem when context is 16px
-}
-
-instead of
-
-h1 {
-    font-size: 1.875rem;
-}
-*/
