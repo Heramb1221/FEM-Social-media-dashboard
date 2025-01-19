@@ -1,12 +1,7 @@
 @use '../util' as *;
 
-/*
-   Remove default top margin for headings to maintain consistent spacing
-   and prevent unnecessary extra space at the top of sections.
-*/
-
 h1, h2, h3 {
-    margin-top: 0; /* Eliminates default top margin applied by browsers */
+    margin-top: 0;
     line-height: 1.1;
 }
 
@@ -18,18 +13,11 @@ h1 {
    }
 }
 
-/*
-   Remove default text decoration (underline) for anchor tags in all states.
-   This provides a cleaner, minimal design for links.
-*/
-
-a, a:visited, a:active {
-    text-decoration: none; /* No underline for links in normal, visited, or active states */
+h2 {
+   font-size: rem(24);
+   margin-bottom: rem(24);
 }
 
-/*
-   Explanation:
-   1. Removing `margin-top` on headings avoids unexpected spacing issues when stacking multiple sections.
-   2. Resetting `text-decoration` for links allows better control over link appearance, enabling the use of custom styles (e.g., color, hover effects).
-   3. Consider adding hover styles (e.g., `a:hover { text-decoration: underline; }`) for better user experience.
-*/
+a, a:visited, a:active {
+    text-decoration: none;
+}
